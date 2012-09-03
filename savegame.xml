@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<SAVE>
+<GAMESAVED>yes</GAMESAVED>
+<CHAPTER>1</CHAPTER>
+<SCENE>lukas_bf</SCENE>
+<STATE><NAME>chodba_end</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>kuchyn_bf_end</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>kuchyn_sf_end</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>lukas_end</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>lukas_nalada</NAME><VALUE>2</VALUE></STATE>
+<STATE><NAME>ma_flasku</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>ma_listky</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>mobil_end</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>pokoj_bf_end</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>pokoj_sf_end</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>predal_flasku</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>predal_listky</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>volano_filipovi</NAME><VALUE>0</VALUE></STATE>
+<STATE><NAME>volano_tereze</NAME><VALUE>0</VALUE></STATE>
+</SAVE>

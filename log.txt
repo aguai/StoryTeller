@@ -1,0 +1,13 @@
+Engine initialization started. Time: 16.
+Engine initialized. Time: 609.
+
+... New game started ...  Time elapsed: 1201.
+
+# Building chapter 1, scene intro. Time elapsed: 1201.
+    Creating VIDEO scene Time elapsed: 1201.
+
+# Building chapter 1, scene pokoj_bf. Time elapsed: 2059.
+    Creating INTERACTIVE scene Time elapsed: 2075.
+
+# Building chapter 1, scene lukas_bf. Time elapsed: 3869.
+    Creating DIALOGUE scene Time elapsed: 3885.

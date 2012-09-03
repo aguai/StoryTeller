@@ -1,0 +1,1200 @@
+﻿<?xml version="1.0"?>
+
+<GAME>
+
+<CHAPTER no = "1">
+
+	<SCENE name = "intro">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\intro.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="5277438" end="42777438">Život muže je složen z překážek, které se snažíme překonávat.</SUBTITLE>
+			<SUBTITLE start="50547642" end="73047642">Žijeme jenom proto, abychom dosahovali svých cílů.</SUBTITLE>
+			<SUBTITLE start="102350205" end="164850205">Neexistuje lepší pocit, než když po téměř nezměrné snaze dosáhneme toho, co jsme chtěli.</SUBTITLE>
+			<SUBTITLE start="278540930" end="311040930">Stejně tak neexistuje horší pocit, než padnout těsně před cílem.</SUBTITLE>
+			<SUBTITLE start="332150545" end="350900545">Lukáši, prosimtě, já bych od tebe něco potřeboval.</SUBTITLE>
+			<SUBTITLE start="352389842" end="378639842">Vůbec! Dneska nikam nejdu.</SUBTITLE>
+			<SUBTITLE start="399558890" end="407058890">Prosím?</SUBTITLE>
+			<SUBTITLE start="419771429" end="439771429">Za-po-meň.</SUBTITLE>
+			<SUBTITLE start="456515874" end="466515874">Díky.</SUBTITLE>
+			<SUBTITLE start="468083289" end="476833289">Není zač.</SUBTITLE>
+			<SUBTITLE start="518979615" end="523979615">Píči!</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_bf</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "pokoj_bf">
+		<TYPE>interactive</TYPE>
+		<SOURCE>..\Video\Smyčka mobil bez flašky.avi</SOURCE>
+		<OBJECTS>
+			<OBJECT name="Lukáš" caption="Svině svinutá, nejradši bych ho umlátil klávesnicí." sound_source="!sound_path!" caption_sound="..\Audio\Lukas.wav" v_count="27" finish_scene="1">
+				<VERTEX x="0" y="372"/>
+				<VERTEX x="24" y="358"/>
+				<VERTEX x="26" y="336"/>
+				<VERTEX x="69" y="305"/>
+				<VERTEX x="116" y="326"/>
+				<VERTEX x="115" y="347"/>
+				<VERTEX x="117" y="356"/>
+				<VERTEX x="116" y="364"/>
+				<VERTEX x="117" y="369"/>
+				<VERTEX x="105" y="399"/>
+				<VERTEX x="80" y="396"/>
+				<VERTEX x="79" y="409"/>
+				<VERTEX x="98" y="454"/>
+				<VERTEX x="121" y="463"/>
+				<VERTEX x="119" y="486"/>
+				<VERTEX x="197" y="488"/>
+				<VERTEX x="230" y="474"/>
+				<VERTEX x="249" y="476"/>
+				<VERTEX x="239" y="498"/>
+				<VERTEX x="198" y="505"/>
+				<VERTEX x="138" y="513"/>
+				<VERTEX x="198" y="532"/>
+				<VERTEX x="230" y="588"/>
+				<VERTEX x="150" y="624"/>
+				<VERTEX x="110" y="606"/>
+				<VERTEX x="43" y="602"/>
+				<VERTEX x="2" y="606"/>
+				<STATECHANGE value="0" replace="1">pokoj_bf_end</STATECHANGE>
+			</OBJECT>
+			<OBJECT name="Předsíň" caption="Trochu ujetá, ale hezká." sound_source="!sound_path!" caption_sound="..\Audio\Predsin.wav" v_count="10" finish_scene="1">
+				<VERTEX x="582" y="179"/>
+				<VERTEX x="579" y="110"/>
+				<VERTEX x="707" y="119"/>
+				<VERTEX x="712" y="642"/>
+				<VERTEX x="673" y="647"/>
+				<VERTEX x="674" y="584"/>
+				<VERTEX x="626" y="573"/>
+				<VERTEX x="622" y="191"/>
+				<VERTEX x="622" y="187"/>
+				<VERTEX x="581" y="184"/>
+				<STATECHANGE value="1" replace="1">pokoj_bf_end</STATECHANGE>
+			</OBJECT>
+			<OBJECT name="Skříň" caption="Skříň s mým bordelelm. Mám v plánu ji uklidit. Jednou." sound_source="!sound_path!" caption_sound="..\Audio\Skrin.wav" v_count="6" finish_scene="1">
+				<TEST op='==' val='0'>ma_listky</TEST>
+				<TEST op='==' val='0'>predal_listky</TEST>
+				<VERTEX x="356" y="177"/>
+				<VERTEX x="369" y="571"/>
+				<VERTEX x="382" y="605"/>
+				<VERTEX x="622" y="571"/>
+				<VERTEX x="619" y="190"/>
+				<VERTEX x="353" y="177"/>
+				<STATECHANGE value="2" replace="1">pokoj_bf_end</STATECHANGE>
+				<STATECHANGE value="1" replace="0">ma_listky</STATECHANGE>
+			</OBJECT>
+			<OBJECT name="Skříň" caption="Skříň s mým bordelelm. Mám v plánu ji uklidit. Jednou." sound_source="!sound_path!" caption_sound="..\Audio\Skrin.wav" v_count="6" finish_scene="0">
+				<TEST op='>' val='0'>ma_listky</TEST>
+				<VERTEX x="356" y="177"/>
+				<VERTEX x="369" y="571"/>
+				<VERTEX x="382" y="605"/>
+				<VERTEX x="622" y="571"/>
+				<VERTEX x="619" y="190"/>
+				<VERTEX x="353" y="177"/>
+			</OBJECT>
+			<OBJECT name="Mobil" caption="Prostě mobil." sound_source="!sound_path!" caption_sound="..\Audio\Mobil.wav" v_count="4" finish_scene="1">
+				<VERTEX x="1135" y="82"/>
+				<VERTEX x="1135" y="182"/>
+				<VERTEX x="1247" y="181"/>
+				<VERTEX x="1247" y="81"/>
+				<STATECHANGE value="3" replace="1">pokoj_bf_end</STATECHANGE>
+			</OBJECT>
+		</OBJECTS>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='0'>pokoj_bf_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>pokoj_bf_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>chodba</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='2'>pokoj_bf_end</TEST>
+				<TEST op='&lt;' val='2'>ma_listky</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>skrin</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='3'>pokoj_bf_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>k_mobilu</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_bf</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "pokoj_sf">
+		<TYPE>interactive</TYPE>
+		<SOURCE>..\Video\Smyčka mobil flaška.avi</SOURCE>
+		<OBJECTS>
+			<OBJECT name="Lukáš" caption="Svině svinutá, nejradši bych ho umlátil klávesnicí." sound_source="!sound_path!" caption_sound="..\Audio\Lukas.wav" v_count="27" finish_scene="1">
+				<VERTEX x="0" y="372"/>
+				<VERTEX x="24" y="358"/>
+				<VERTEX x="26" y="336"/>
+				<VERTEX x="69" y="305"/>
+				<VERTEX x="116" y="326"/>
+				<VERTEX x="115" y="347"/>
+				<VERTEX x="117" y="356"/>
+				<VERTEX x="116" y="364"/>
+				<VERTEX x="117" y="369"/>
+				<VERTEX x="105" y="399"/>
+				<VERTEX x="80" y="396"/>
+				<VERTEX x="79" y="409"/>
+				<VERTEX x="98" y="454"/>
+				<VERTEX x="121" y="463"/>
+				<VERTEX x="119" y="486"/>
+				<VERTEX x="197" y="488"/>
+				<VERTEX x="230" y="474"/>
+				<VERTEX x="249" y="476"/>
+				<VERTEX x="239" y="498"/>
+				<VERTEX x="198" y="505"/>
+				<VERTEX x="138" y="513"/>
+				<VERTEX x="198" y="532"/>
+				<VERTEX x="230" y="588"/>
+				<VERTEX x="150" y="624"/>
+				<VERTEX x="110" y="606"/>
+				<VERTEX x="43" y="602"/>
+				<VERTEX x="2" y="606"/>
+				<STATECHANGE value="0" replace="1">pokoj_sf_end</STATECHANGE>
+			</OBJECT>
+			<OBJECT name="Předsíň" caption="Trochu ujetá, ale hezká." sound_source="!sound_path!" caption_sound="..\Audio\Predsin.wav" v_count="10" finish_scene="1">
+				<VERTEX x="582" y="179"/>
+				<VERTEX x="579" y="110"/>
+				<VERTEX x="707" y="119"/>
+				<VERTEX x="712" y="642"/>
+				<VERTEX x="673" y="647"/>
+				<VERTEX x="674" y="584"/>
+				<VERTEX x="626" y="573"/>
+				<VERTEX x="622" y="191"/>
+				<VERTEX x="622" y="187"/>
+				<VERTEX x="581" y="184"/>
+				<STATECHANGE value="1" replace="1">pokoj_sf_end</STATECHANGE>
+			</OBJECT>
+			<OBJECT name="Skříň" caption="Skříň s mým bordelelm. Mám v plánu ji uklidit. Jednou." sound_source="!sound_path!" caption_sound="..\Audio\Skrin.wav" v_count="6" finish_scene="1">
+				<TEST op='==' val='0'>ma_listky</TEST>
+				<TEST op='==' val='0'>predal_listky</TEST>
+				<VERTEX x="356" y="177"/>
+				<VERTEX x="369" y="571"/>
+				<VERTEX x="382" y="605"/>
+				<VERTEX x="622" y="571"/>
+				<VERTEX x="619" y="190"/>
+				<VERTEX x="353" y="177"/>
+				<STATECHANGE value="2" replace="1">pokoj_sf_end</STATECHANGE>
+				<STATECHANGE value="1" replace="0">ma_listky</STATECHANGE>
+			</OBJECT>
+			<OBJECT name="Skříň" caption="Skříň s mým bordelelm. Mám v plánu ji uklidit. Jednou." sound_source="!sound_path!" caption_sound="..\Audio\Skrin.wav" v_count="6" finish_scene="0">
+				<TEST op='>' val='0'>ma_listky</TEST>
+				<VERTEX x="356" y="177"/>
+				<VERTEX x="369" y="571"/>
+				<VERTEX x="382" y="605"/>
+				<VERTEX x="622" y="571"/>
+				<VERTEX x="619" y="190"/>
+				<VERTEX x="353" y="177"/>
+			</OBJECT>
+			<OBJECT name="Mobil" caption="Prostě mobil." sound_source="!sound_path!" caption_sound="..\Audio\Mobil.wav" v_count="4" finish_scene="1">
+				<VERTEX x="1135" y="82"/>
+				<VERTEX x="1135" y="182"/>
+				<VERTEX x="1247" y="181"/>
+				<VERTEX x="1247" y="81"/>
+				<STATECHANGE value="3" replace="1">pokoj_sf_end</STATECHANGE>
+			</OBJECT>
+		</OBJECTS>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='0'>pokoj_sf_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_sf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>pokoj_sf_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>chodba</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='2'>pokoj_sf_end</TEST>
+				<TEST op='&lt;' val='2'>ma_listky</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>skrin</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='3'>pokoj_sf_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>k_mobilu</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_sf</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "lukas_bf">
+		<TYPE>dialogue</TYPE>
+		<SOURCE>..\Video\smyčka pokoj bez flašky.avi</SOURCE>
+		<OPTIONS>	
+			<OPTION text="Nech ho bejt.">
+				<STATECHANGE value="7" replace="1">lukas_end</STATECHANGE>
+			</OPTION>	
+			<OPTION text="Prosím, já opravdu potřebuju volný byt.">
+				<TEST op='==' val='2'>lukas_nalada</TEST>
+				<STATECHANGE value="-1" replace="0">lukas_nalada</STATECHANGE>
+				<STATECHANGE value="1" replace="1">lukas_end</STATECHANGE>
+			</OPTION>  
+			<OPTION text="Noták, přece nebudeš taková svině...">
+				<TEST op='==' val='2'>lukas_nalada</TEST>
+				<STATECHANGE value="-1" replace="0">lukas_nalada</STATECHANGE>  
+				<STATECHANGE value="2" replace="1">lukas_end</STATECHANGE>
+			</OPTION>	
+			<OPTION text="Ty vole, za tohle se ti tak strašně pomstím.">
+				<TEST op='==' val='1'>lukas_nalada</TEST>
+				<STATECHANGE value="-1" replace="0">lukas_nalada</STATECHANGE>  
+				<STATECHANGE value="3" replace="1">lukas_end</STATECHANGE>
+			</OPTION>	
+			<OPTION text="Sereš mě.">
+				<TEST op='==' val='0'>lukas_nalada</TEST>
+				<STATECHANGE value="-1" replace="0">lukas_nalada</STATECHANGE>  
+				<STATECHANGE value="4" replace="1">lukas_end</STATECHANGE>
+			</OPTION>	
+			<OPTION text="Předat flašku.">
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<STATECHANGE value="1" replace="1">predal_flasku</STATECHANGE> 
+				<STATECHANGE value="0" replace="1">ma_flasku</STATECHANGE>  
+				<STATECHANGE value="5" replace="1">lukas_end</STATECHANGE>				
+			</OPTION>
+			<OPTION text="Předat lístky.">
+				<TEST op='==' val='1'>ma_listky</TEST>
+				<STATECHANGE value="1" replace="1">predal_listky</STATECHANGE>  
+				<STATECHANGE value="0" replace="1">ma_listky</STATECHANGE>  
+				<STATECHANGE value="6" replace="1">lukas_end</STATECHANGE>
+			</OPTION>				
+		</OPTIONS>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='1'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_1</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='2'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_2</NEXTSCENE>
+			</CASE>			
+			<CASE>
+				<TEST op='==' val='3'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_3</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='4'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_4</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='5'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_vino</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='6'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_listky</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='7'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_bf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "lukas_sf">
+		<TYPE>dialogue</TYPE>
+		<SOURCE>..\Video\smyčka pokoj flaška.avi</SOURCE>
+		<OPTIONS>	
+			<OPTION text="Nech ho bejt.">
+				<STATECHANGE value="7" replace="1">lukas_end</STATECHANGE>
+			</OPTION>	
+			<OPTION text="Prosím, já opravdu potřebuju volný byt.">
+				<TEST op='==' val='2'>lukas_nalada</TEST>
+				<STATECHANGE value="-1" replace="0">lukas_nalada</STATECHANGE>
+				<STATECHANGE value="1" replace="1">lukas_end</STATECHANGE>
+			</OPTION>  
+			<OPTION text="Noták, přece nebudeš taková svině...">
+				<TEST op='==' val='2'>lukas_nalada</TEST>
+				<STATECHANGE value="-1" replace="0">lukas_nalada</STATECHANGE>  
+				<STATECHANGE value="2" replace="1">lukas_end</STATECHANGE>
+			</OPTION>	
+			<OPTION text="Ty vole, za tohle se ti tak strašně pomstím.">
+				<TEST op='==' val='1'>lukas_nalada</TEST>
+				<STATECHANGE value="-1" replace="0">lukas_nalada</STATECHANGE>  
+				<STATECHANGE value="3" replace="1">lukas_end</STATECHANGE>
+			</OPTION>	
+			<OPTION text="Sereš mě.">
+				<TEST op='==' val='0'>lukas_nalada</TEST>
+				<STATECHANGE value="-1" replace="0">lukas_nalada</STATECHANGE>  
+				<STATECHANGE value="4" replace="1">lukas_end</STATECHANGE>
+			</OPTION>	
+			<OPTION text="Předat flašku.">
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<STATECHANGE value="1" replace="1">predal_flasku</STATECHANGE> 
+				<STATECHANGE value="0" replace="1">ma_flasku</STATECHANGE>  
+				<STATECHANGE value="5" replace="1">lukas_end</STATECHANGE>				
+			</OPTION>
+			<OPTION text="Předat lístky.">
+				<TEST op='==' val='1'>ma_listky</TEST>
+				<STATECHANGE value="1" replace="1">predal_listky</STATECHANGE>  
+				<STATECHANGE value="0" replace="1">ma_listky</STATECHANGE>  
+				<STATECHANGE value="6" replace="1">lukas_end</STATECHANGE>
+			</OPTION>				
+		</OPTIONS>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='1'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_1</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='2'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_2</NEXTSCENE>
+			</CASE>			
+			<CASE>
+				<TEST op='==' val='3'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_3</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='4'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_4</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='5'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_vino</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='6'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_listky</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='7'>lukas_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_sf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "lukas_vino">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Lukáš flaška.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="27418073" end="34918073">Co já s tím?</SUBTITLE>
+			<SUBTITLE start="39990658" end="46240658">Dárek.</SUBTITLE>
+			<SUBTITLE start="51408617" end="61408617">Příležitost?</SUBTITLE>
+			<SUBTITLE start="79027778" end="87777778">Zoufalství.</SUBTITLE>
+			<SUBTITLE start="89410771" end="105660771">Tak to jo, na to se napiju.</SUBTITLE>
+		</SUBTITLES>	
+		<NEXT>	
+			<CASE>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_sf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "lukas_listky">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Lukáš lístky.avi</SOURCE>
+		<SUBTITLES>
+		<SUBTITLE start="19938822" end="23688822">Na.</SUBTITLE>
+		<SUBTITLE start="36539094" end="42789094">Co to je?</SUBTITLE>
+		<SUBTITLE start="45508686" end="59258686">Lístky na dnešní ples na flédě.</SUBTITLE>
+		<SUBTITLE start="64378686" end="75628686">Mě se na ples nechce.</SUBTITLE>
+		<SUBTITLE start="78950273" end="93950273">Terce by se možná chtělo.</SUBTITLE>
+		<SUBTITLE start="94926917" end="117426917">Jo, o tom dost vážně pochybuju.</SUBTITLE>
+		<SUBTITLE start="125602926" end="134352926">Jeden nikdy neví.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>	
+			<CASE>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_sf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "lukas_1">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Konverzace Lukáš 1.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="5537030" end="26787030">Prosím, já opravdu potřebuju volný byt.</SUBTITLE>
+			<SUBTITLE start="33859910" end="48859910">Tak to máš opravdu smůlu.</SUBTITLE>
+			<SUBTITLE start="54518504" end="78268504">Tak to ti opravdu děkuju, no.</SUBTITLE>
+			<SUBTITLE start="78891792" end="87641792">Opravdu nemáš zač.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>	
+			<CASE>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_sf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>	
+
+	<SCENE name = "lukas_2">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Konverzace Lukáš 2.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="29869343" end="53619343">Noták, přece nebudeš taková svině.</SUBTITLE>
+			<SUBTITLE start="67538323" end="85038323">Jo, a co mě k tomu jako vede?</SUBTITLE>
+			<SUBTITLE start="87086803" end="93961803">No...</SUBTITLE>
+			<SUBTITLE start="93995624" end="129620624">Možná by mohla pomoct radost ze soužití s tebou.</SUBTITLE>
+			<SUBTITLE start="136162495" end="143662495">Možná?</SUBTITLE>
+			<SUBTITLE start="143747223" end="159372223">Kdyby tak nějaká byla.</SUBTITLE>
+			<SUBTITLE start="166001134" end="173501134">Noták!</SUBTITLE>
+			<SUBTITLE start="173793481" end="183168481">Smů-la.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>	
+			<CASE>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_sf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "lukas_3">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Konverzace Lukáš 3.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="6057325" end="46057325">Tyvole, za tohle se ti tak strašně, strašně pomstím.</SUBTITLE>
+			<SUBTITLE start="46283476" end="76595976">Jojojo to víš že jo, hele, stejně si za to můžeš sám.</SUBTITLE>
+			<SUBTITLE start="78047665" end="91485165">Ty si za to můžeš sám.</SUBTITLE>
+			<SUBTITLE start="91524989" end="109337489">Jo takže najednou je to moje vina, jo?</SUBTITLE>
+			<SUBTITLE start="112339570" end="136089570">No kdyby ses nechoval jako vocas, tak by byla ještě teďka s tebou.</SUBTITLE>
+			<SUBTITLE start="139708686" end="179708686">Nenenenenene, kdyby tys nebyl zkurvenej zrádce, tak je ještě teďka se mnou.</SUBTITLE>
+			<SUBTITLE start="183053085" end="210553085">Nebejt mě, tak máš tejden, tejden navíc maximálně.</SUBTITLE>
+			<SUBTITLE start="211142382" end="227392382">Bull-fucking-shit.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>	
+			<CASE>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_sf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>	
+	
+	<SCENE name = "lukas_4">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Konverzace Lukáš 4.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="15717484" end="24467484">Sereš mě.</SUBTITLE>
+			<SUBTITLE start="26824445" end="34324445">Snažim se.</SUBTITLE>
+			<SUBTITLE start="36208459" end="46208459">Jde ti to.</SUBTITLE>
+			<SUBTITLE start="47397336" end="55522336">To jde dobře.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>	
+			<CASE>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lukas_sf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "skrin">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\skříň lístky.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_sf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "chodba">
+		<TYPE>interactive</TYPE>
+		<SOURCE>..\Video\smyčka chodba.avi</SOURCE>
+		<OBJECTS>
+			<OBJECT name="Kuchyň" caption="Kuchyň - úzká, ošklivá, ale funkční." sound_source="!sound_path!" caption_sound="..\Audio\Kuchyn.wav" v_count="5" finish_scene="1">
+				<VERTEX x="55" y="687"/>
+				<VERTEX x="72" y="57"/>
+				<VERTEX x="77" y="55"/>
+				<VERTEX x="211" y="162"/>
+				<VERTEX x="208" y="686"/>
+				<STATECHANGE value="0" replace="1">chodba_end</STATECHANGE>	
+			</OBJECT>
+			<OBJECT name="Pokoj" caption="Můj pokoj, potřeboval by deratizaci." sound_source="!sound_path!" caption_sound="..\Audio\Pokoj.wav" v_count="10" finish_scene="1">
+				<VERTEX x="478" y="685"/>
+				<VERTEX x="473" y="191"/>
+				<VERTEX x="758" y="191"/>
+				<VERTEX x="761" y="206"/>
+				<VERTEX x="777" y="310"/>
+				<VERTEX x="808" y="322"/>
+				<VERTEX x="735" y="379"/>
+				<VERTEX x="708" y="420"/>
+				<VERTEX x="732" y="520"/>
+				<VERTEX x="699" y="684"/>
+				<STATECHANGE value="1" replace="1">chodba_end</STATECHANGE>	
+			</OBJECT>
+			<OBJECT name="Zrcadlo" caption="Zrcadlo - zůstalo po předchozí majitelce. Nechápu, k čemu ho ona mohla potřebovat." sound_source="!sound_path!" caption_sound="..\Audio\Zrcadlo.wav" v_count="9" finish_scene="0">
+				<VERTEX x="1020" y="56"/>
+				<VERTEX x="1022" y="60"/>
+				<VERTEX x="1031" y="412"/>
+				<VERTEX x="1080" y="569"/>
+				<VERTEX x="1042" y="642"/>
+				<VERTEX x="1038" y="681"/>
+				<VERTEX x="1263" y="686"/>
+				<VERTEX x="1263" y="31"/>
+				<VERTEX x="1050" y="31"/>
+			</OBJECT>
+		</OBJECTS>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='0'>chodba_end</TEST>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>kuchyn_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='0'>chodba_end</TEST>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>kuchyn_sf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='0'>chodba_end</TEST>
+				<TEST op='==' val='1'>predal_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>kuchyn_sf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>chodba_end</TEST>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_bf</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>chodba_end</TEST>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_sf</NEXTSCENE>
+			</CASE>			
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+
+	<SCENE name = "kuchyn_bf">
+		<TYPE>interactive</TYPE>
+		<SOURCE>..\Video\smyčka kuchyně bez flašky.avi</SOURCE>
+		<OBJECTS>
+			<OBJECT name="Lednička" caption="Lednička. Na to, jak je malá, je podivuhodně prázdná." sound_source="!sound_path!" caption_sound="..\Audio\Lednicka.wav" v_count="22" finish_scene="0">
+				<VERTEX x="2" y="116"/>
+				<VERTEX x="309" y="66"/>
+				<VERTEX x="533" y="165"/>
+				<VERTEX x="531" y="682"/>
+				<VERTEX x="313" y="680"/>
+				<VERTEX x="307" y="551"/>
+				<VERTEX x="289" y="552"/>
+				<VERTEX x="296" y="533"/>
+				<VERTEX x="221" y="528"/>
+				<VERTEX x="230" y="351"/>
+				<VERTEX x="203" y="324"/>
+				<VERTEX x="207" y="261"/>
+				<VERTEX x="190" y="259"/>
+				<VERTEX x="171" y="264"/>
+				<VERTEX x="168" y="324"/>
+				<VERTEX x="149" y="345"/>
+				<VERTEX x="146" y="507"/>
+				<VERTEX x="141" y="521"/>
+				<VERTEX x="93" y="525"/>
+				<VERTEX x="93" y="317"/>
+				<VERTEX x="64" y="291"/>
+				<VERTEX x="3" y="276"/>
+			</OBJECT>
+			<OBJECT name="Rulanské modré" caption="Hýčkaný dar ... snad bude za něco stát." sound_source="!sound_path!" caption_sound="..\Audio\Vino.wav"  v_count="10" finish_scene="1">
+				<VERTEX x="145" y="528"/>
+				<VERTEX x="214" y="530"/>
+				<VERTEX x="225" y="352"/>
+				<VERTEX x="201" y="329"/>
+				<VERTEX x="200" y="267"/>
+				<VERTEX x="190" y="261"/>
+				<VERTEX x="176" y="264"/>
+				<VERTEX x="173" y="321"/>
+				<VERTEX x="153" y="346"/>
+				<VERTEX x="149" y="503"/>
+				<STATECHANGE value="1" replace="1">kuchyn_bf_end</STATECHANGE>	
+				<STATECHANGE value="1" replace="1">ma_flasku</STATECHANGE>	
+			</OBJECT>
+			<OBJECT name="Předsíň" caption="Předsíň. Pořád ta samá." sound_source="!sound_path!" caption_sound="..\Audio\Predsin.wav" v_count="4" finish_scene="1">
+				<VERTEX x="535" y="251"/>
+				<VERTEX x="562" y="262"/>
+				<VERTEX x="566" y="679"/>
+				<VERTEX x="533" y="682"/>
+				<STATECHANGE value="0" replace="1">kuchyn_bf_end</STATECHANGE>	
+			</OBJECT>
+			<OBJECT name="Mikrovlnka" caption="Mikrovlnka. Moje spása - žít před revolucí, umřel bych hlady." sound_source="!sound_path!" caption_sound="..\Audio\Mikrovlnka.wav" v_count="6" finish_scene="0">
+				<VERTEX x="83" y="526"/>
+				<VERTEX x="1" y="525"/>
+				<VERTEX x="3" y="284"/>
+				<VERTEX x="62" y="293"/>
+				<VERTEX x="91" y="318"/>
+				<VERTEX x="86" y="525"/>
+			</OBJECT>
+		</OBJECTS>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='0'>kuchyn_bf_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>chodba</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>kuchyn_bf_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>vino</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>kuchyn_bf</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "kuchyn_sf">
+		<TYPE>interactive</TYPE>
+		<SOURCE>..\Video\smyčka kuchyně flaška.avi</SOURCE>
+		<OBJECTS>
+			<OBJECT name="Lednička" caption="Lednička. Na to, jak je malá, je podivuhodně prázdná." sound_source="!sound_path!" caption_sound="..\Audio\Lednicka.wav" v_count="10" finish_scene="0">
+				<VERTEX x="2" y="116"/>
+				<VERTEX x="309" y="66"/>
+				<VERTEX x="533" y="165"/>
+				<VERTEX x="531" y="682"/>
+				<VERTEX x="313" y="680"/>
+				<VERTEX x="307" y="551"/>
+				<VERTEX x="93" y="525"/>
+				<VERTEX x="93" y="317"/>
+				<VERTEX x="64" y="291"/>
+				<VERTEX x="3" y="276"/>
+			</OBJECT>
+			<OBJECT name="Předsíň" caption="Předsíň. Pořád ta samá." sound_source="!sound_path!" caption_sound="..\Audio\Predsin.wav" v_count="4" finish_scene="1">
+				<VERTEX x="535" y="251"/>
+				<VERTEX x="562" y="262"/>
+				<VERTEX x="566" y="679"/>
+				<VERTEX x="533" y="682"/>
+				<STATECHANGE value="0" replace="1">kuchyn_sf_end</STATECHANGE>	
+			</OBJECT>
+			<OBJECT name="Mikrovlnka" caption="Mikrovlnka. Moje spása - žít před revolucí, umřel bych hlady." sound_source="!sound_path!" caption_sound="..\Audio\Mikrovlnka.wav" v_count="6" finish_scene="0">
+				<VERTEX x="83" y="526"/>
+				<VERTEX x="1" y="525"/>
+				<VERTEX x="3" y="284"/>
+				<VERTEX x="62" y="293"/>
+				<VERTEX x="91" y="318"/>
+				<VERTEX x="86" y="525"/>
+			</OBJECT>
+		</OBJECTS>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='0'>kuchyn_sf_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>chodba</NEXTSCENE>
+			</CASE>		
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>kuchyn_sf</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "vino">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\sebrání flašky.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>kuchyn_sf</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>	
+	
+	<SCENE name = "k_mobilu">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\cesta na chodbu telefon.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>mobil</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "od_mobilu">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\cesta z chodby do pokoje.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_bf</NEXTSCENE>				
+			</CASE>
+			<CASE>
+				<TEST op='>' val='0'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_sf</NEXTSCENE>				
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "mobil">
+		<TYPE>dialogue</TYPE>
+		<SOURCE>..\Video\smyčka telefon display.avi</SOURCE>
+		<OPTIONS>
+			<OPTION text="Vrátit se.">
+				<STATECHANGE value="2" replace="1">mobil_end</STATECHANGE>
+			</OPTION>
+			<OPTION text="Zavolat Tereze.">
+				<TEST op='==' val='0'>volano_tereze</TEST>
+				<STATECHANGE value="0" replace="1">mobil_end</STATECHANGE>
+				<STATECHANGE value="1" replace="1">volano_tereze</STATECHANGE>
+			</OPTION>  
+			<OPTION text="Zavolat Filipovi.">
+				<TEST op='==' val='0'>volano_filipovi</TEST>
+				<STATECHANGE value="1" replace="1">mobil_end</STATECHANGE>  
+				<STATECHANGE value="1" replace="1">volano_filipovi</STATECHANGE>
+			</OPTION>
+		</OPTIONS>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='0'>mobil_end</TEST>
+				<TEST op='==' val='0'>ma_listky</TEST>
+				<TEST op='==' val='0'>predal_listky</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>tereza_fail</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='0'>mobil_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>tereza_win</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>mobil_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>filip_tel</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='2'>mobil_end</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>od_mobilu</NEXTSCENE>
+			</CASE>			
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>mobil</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "tereza_fail">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Telefonát Tereza FAIL.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="56715602" end="66715602">Čau.</SUBTITLE>
+			<SUBTITLE start="68276395" end="108276395">No, ahoj, prosimtě, já bych asi potřeboval pomoct.</SUBTITLE>
+			<SUBTITLE start="109899139" end="114899139">No?</SUBTITLE>
+			<SUBTITLE start="131580069" end="154080069">No, seš dneska doma, viď?</SUBTITLE>
+			<SUBTITLE start="157302586" end="172302586">Jo, ale mám dost práce.</SUBTITLE>
+			<SUBTITLE start="173872926" end="213872926">No, prosimtě, potřeboval bych se zbavit na dnešní večer Lukáše.</SUBTITLE>
+			<SUBTITLE start="216767620" end="234267620">A co s ním mám jako podle tebe dělat?</SUBTITLE>
+			<SUBTITLE start="237498595" end="269998595">No, já nevim co s nim, co tak normálně děláte?</SUBTITLE>
+			<SUBTITLE start="276532563" end="286532563">No nic, právěže.</SUBTITLE>
+			<SUBTITLE start="285476622" end="287976622">...jo.</SUBTITLE>
+			<SUBTITLE start="304513652" end="329513652">No a nemohla bys třeba něco vymyslet?</SUBTITLE>
+			<SUBTITLE start="332294468" end="359794468">Fakt sorry, ale dneska na to nemám ani energii, ani čas.</SUBTITLE>
+			<SUBTITLE start="364430885" end="399430885">Hm, tak to díky moc za pomoc, no, tak ahoj.</SUBTITLE>
+			<SUBTITLE start="401006441" end="416006441">No nemáš zač, tak zatím čau.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>	
+			<CASE>
+				<TEST op='==' val='1'>volano_filipovi</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_fail_pozdeji</NEXTSCENE>				
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>mobil</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "tereza_win">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Telefonát Tereza WIN.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="47063357" end="57063357">Čau.</SUBTITLE>
+			<SUBTITLE start="60447393" end="92947393">No, ahoj, prosimtě já bych asi potřeboval od tebe pomoct.</SUBTITLE>
+			<SUBTITLE start="95586713" end="103086713">No?</SUBTITLE>
+			<SUBTITLE start="107401316" end="127401316">No, seš večer doma, žejo?</SUBTITLE>
+			<SUBTITLE start="128003130" end="143003130">Jo, ale mám dost práce.</SUBTITLE>
+			<SUBTITLE start="144674150" end="197174150">Nemohla bys vytáhnout ven Lukáše? Já bych se ho dneska večer fakt potřeboval zbavit.</SUBTITLE>
+			<SUBTITLE start="197799411" end="211549411">A co s nim mám jako dělat?</SUBTITLE>
+			<SUBTITLE start="218099411" end="271849411">No, já mám dva volňásky na ples, který asi už nevyužiju, tak byste třeba mohli zajít tam.</SUBTITLE>
+			<SUBTITLE start="273991633" end="285241633">Se mi nechce.</SUBTITLE>
+			<SUBTITLE start="289809978" end="317309978">Prosim, já bych to fakt, fakt pořeboval.</SUBTITLE>
+			<SUBTITLE start="323951633" end="348951633">No dobře, ale dlužíš mi to.</SUBTITLE>
+			<SUBTITLE start="352705828" end="370205828">Jo, díky, máš to u mě.</SUBTITLE>
+			<SUBTITLE start="371804581" end="376804581">Tak si to užij.</SUBTITLE>
+			<SUBTITLE start="378160522" end="413160522">Jo, neboj, užiju si to, to mi můžeš věřit. Taky si to užijte.</SUBTITLE>
+			<SUBTITLE start="414455284" end="419455284">Čau.</SUBTITLE>
+			<SUBTITLE start="420066463" end="427566463">Jo, čau.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>tereza_pozdeji</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "tereza_pozdeji">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Pozdeji.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>	
+			<CASE>
+				<TEST op='>' val='0'>lukas_nalada</TEST>	
+				<TEST op='==' val='1'>predal_listky</TEST>					
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>ples_win</NEXTSCENE>
+			</CASE>	
+			<CASE>
+				<TEST op='>' val='0'>lukas_nalada</TEST>	
+				<TEST op='==' val='0'>predal_listky</TEST>					
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>ples_fail</NEXTSCENE>
+			</CASE>	
+			<CASE>
+				<TEST op='&lt;=' val='0'>lukas_nalada</TEST>	
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>ples_mood</NEXTSCENE>
+			</CASE>		
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad_script_failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "ples_win">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Telefonát Lukáš ples WIN.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="63248935" end="72373935">Zdar.</SUBTITLE>
+			<SUBTITLE start="91935919" end="144435919">Na ples. Uh. To je mi ale šťastná a nepředvídatelná náhoda...</SUBTITLE>
+			<SUBTITLE start="163289887" end="173289887">Jo.</SUBTITLE>
+			<SUBTITLE start="175707121" end="188207121">OK. Přijdu.</SUBTITLE>
+			<SUBTITLE start="197224513" end="234724513">Tak v celou. Fajn. Zatim.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>odchod_ples</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "ples_fail">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Telefonát Lukáš ples FAIL.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="72796509" end="82796509">Zdar.</SUBTITLE>
+			<SUBTITLE start="103006599" end="164006599">Na ples? Moc se mi nechce, hele, já ani nemám peníze. </SUBTITLE>
+			<SUBTITLE start="177068572" end="194568572">Asi budu spíš šetřit, hele.</SUBTITLE>
+			<SUBTITLE start="205106826" end="267606826">Tak dík, ale... kdyžtak se ozvu. Fajn. Zdar.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='1'>volano_filipovi</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_fail_pozdeji</NEXTSCENE>				
+			</CASE>
+			<CASE>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>mobil</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "ples_mood">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Telefonát Lukáš ples FAIL nálada.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="50677280" end="63177280">Zdar.</SUBTITLE>
+			<SUBTITLE start="74758754" end="132258754">Na ples? No popravdě, moc se mi nechce.</SUBTITLE>
+			<SUBTITLE start="149196305" end="199196305">No, ne, fakt ne, hele, dík za pozvání ale ne.</SUBTITLE>
+			<SUBTITLE start="199741361" end="219741361">Tak dám kdyžtak vědět.</SUBTITLE>
+			<SUBTITLE start="228559184" end="239809184">Fajn, zdar.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='1'>volano_filipovi</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_fail_pozdeji</NEXTSCENE>				
+			</CASE>
+			<CASE>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>mobil</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "odchod_ples">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Lukáš odchod ples.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="30901475" end="70901475">Vůbec nemám pocit, že by sis to zasloužil, ale námahu oceňuju.</SUBTITLE>
+			<SUBTITLE start="78197234" end="93822234">Bav se dobře na plese.</SUBTITLE>
+			<SUBTITLE start="97876214" end="117876214">Jo a ty se pokus nezasrat koberec.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_win_pozdeji</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "filip_tel">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Telefonát Filip.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="25073221" end="38041971">Příjem.</SUBTITLE>
+			<SUBTITLE start="38194572" end="60850822">No, nazdar, prosimtě, co děláš dneska?</SUBTITLE>
+			<SUBTITLE start="61194218" end="82444218">Zrovna se pakuju na chlastačku do lomu.</SUBTITLE>
+			<SUBTITLE start="83461338" end="122211338">Jo a nemohl by si s sebou prosimtě vytáhnout Lukáše?</SUBTITLE>
+			<SUBTITLE start="122278005" end="141028005">A on jako bude ochotnej zvednout prdel? </SUBTITLE>
+			<SUBTITLE start="141403912" end="172028912">No snad by jako byl ochotnej, no.</SUBTITLE>
+			<SUBTITLE start="175042291" end="192542291">OK, co za to?</SUBTITLE>
+			<SUBTITLE start="194636939" end="237136939">Tak, já nevim, panáka? Dva panáky?</SUBTITLE>
+			<SUBTITLE start="245878595" end="255878595">Dobře.</SUBTITLE>
+			<SUBTITLE start="258574649" end="308574649">Supr, hele, díky moc, fakt jsem se ho teďka potřeboval zbavit.</SUBTITLE>
+			<SUBTITLE start="309352495" end="318102495">Ale nic neslibuju.</SUBTITLE>
+			<SUBTITLE start="318293028" end="353918028">Alespoň to zkusíš, jo? Díky moc, užijte si to. Zatím čau.</SUBTITLE>
+			<SUBTITLE start="354097529" end="367847529">Taky díky, měj se.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>filip_pozdeji</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>	
+
+	<SCENE name = "filip_pozdeji">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Pozdeji.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>	
+			<CASE>
+				<TEST op='==' val='1'>predal_flasku</TEST>
+				<TEST op='>' val='0'>lukas_nalada</TEST>				
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lom_win</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='0'>predal_flasku</TEST>
+				<TEST op='>' val='0'>lukas_nalada</TEST>				
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lom_fail</NEXTSCENE>
+			</CASE>		
+			<CASE>
+				<TEST op='&lt;=' val='0'>lukas_nalada</TEST>	
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>lom_mood</NEXTSCENE>
+			</CASE>		
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad_script_failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "lom_win">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Telefonát Lukáš lom WIN.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="54356395" end="64356395">Zdar.</SUBTITLE>
+			<SUBTITLE start="82926645" end="90426645">Do lomu?</SUBTITLE>
+			<SUBTITLE start="129640046" end="146240046">Ale tak jo, proč ne.</SUBTITLE>
+			<SUBTITLE start="158872314" end="191372314">OK, uvidíme se tam, zdar.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>odchod_lom</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "lom_fail">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Telefonát Lukáš lom FAIL.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="77089366" end="86589366">Zdar.</SUBTITLE>
+			<SUBTITLE start="101099048" end="111099048">Do lomu?</SUBTITLE>
+			<SUBTITLE start="124990568" end="142490568">To asi fakt ne, hele.</SUBTITLE>
+			<SUBTITLE start="153557778" end="210057778">No, já nemám ani co pít, nemám prachy, nemám nic, tyjo. Já budu doma.</SUBTITLE>
+			<SUBTITLE start="216591248" end="241591248">OK, tak zatím zdar.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='1'>volano_tereze</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_fail_pozdeji</NEXTSCENE>				
+			</CASE>
+			<CASE>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>mobil</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "lom_mood">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Telefonát Lukáš lom FAIL nálada.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="50531883" end="60531883">Zdar.</SUBTITLE>
+			<SUBTITLE start="78472132" end="88472132">Do lomu?</SUBTITLE>
+			<SUBTITLE start="99528617" end="119528617">Hele, to se mi fakt nechce.</SUBTITLE>
+			<SUBTITLE start="133658209" end="153658209">No já vim tyvole, ale je tam zima.</SUBTITLE>
+			<SUBTITLE start="167650205" end="212650205">Nah, kdybych si to rozmyslel, tak se tam potkáme, ale spíš ne, hele.</SUBTITLE>
+			<SUBTITLE start="218315896" end="233315896">OK, zatim.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<CASE>
+				<TEST op='==' val='1'>volano_tereze</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_fail_pozdeji</NEXTSCENE>				
+			</CASE>
+			<CASE>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>mobil</NEXTSCENE>
+			</CASE>
+			<CASE>
+				<TEST op='==' val='1'>ma_flasku</TEST>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>pokoj_sf</NEXTSCENE>
+			</CASE>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>bad script failure</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "odchod_lom">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Lukáš odchod lom.avi</SOURCE>
+		<SUBTITLES>
+			<SUBTITLE start="30054241" end="57554241">Mám strašný nutkání tu zůstat už jenom z principu.</SUBTITLE>
+			<SUBTITLE start="58671860" end="73671860">Ale odcházíš.</SUBTITLE>
+			<SUBTITLE start="77368073" end="114868073">Jo, odcházím. Doufám že ty se při tom prznění alespoň budeš cejtit hrdě.</SUBTITLE>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_win_pozdeji</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "end_win_pozdeji">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Pozdeji.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>	
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_win</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "end_win">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Outro WIN.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_win_text</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "end_win_text">
+		<TYPE>finish</TYPE>
+		<SOURCE>..\Video\Vitezstvi.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>Game_has_ended</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+
+	<SCENE name = "end_fail_pozdeji">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Pozdeji.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>	
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_fail</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+	<SCENE name = "end_fail">
+		<TYPE>video</TYPE>
+		<SOURCE>..\Video\Outro FAIL.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>end_fail_text</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+
+	<SCENE name = "end_fail_text">
+		<TYPE>finish</TYPE>
+		<SOURCE>..\Video\Porazka.avi</SOURCE>
+		<SUBTITLES>
+		</SUBTITLES>
+		<NEXT>
+			<DEFAULT>
+				<NEXTCHAPTER>1</NEXTCHAPTER><NEXTSCENE>Game_has_ended</NEXTSCENE>
+			</DEFAULT>
+		</NEXT>
+	</SCENE>
+	
+</CHAPTER>
+
+</GAME>

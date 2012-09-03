@@ -1,0 +1,42 @@
+﻿Build started 25.9.2011 18:03:38.
+     1>Project "D:\STORYTELLER\Engine app\StoryTeller.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\StoryTeller.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D MARKUP_STL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt dialogue.cpp
+         dialogue.cpp
+     1>d:\storyteller\engine app\dialogue.cpp(159): warning C4244: '-=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\storyteller\engine app\dialogue.cpp(161): warning C4244: '-=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\storyteller\engine app\dialogue.cpp(203): warning C4244: 'argument' : conversion from 'Gdiplus::REAL' to 'INT', possible loss of data
+     1>d:\storyteller\engine app\dialogue.cpp(203): warning C4244: 'argument' : conversion from 'Gdiplus::REAL' to 'INT', possible loss of data
+     1>d:\storyteller\engine app\dialogue.cpp(227): warning C4244: 'argument' : conversion from 'Gdiplus::REAL' to 'INT', possible loss of data
+     1>d:\storyteller\engine app\dialogue.cpp(227): warning C4244: 'argument' : conversion from 'Gdiplus::REAL' to 'INT', possible loss of data
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\STORYTELLER\Engine app\Debug\StoryTeller.exe" /NOLOGO Dxerr.lib GdiPlus.lib Strmiids.lib d3d9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\StoryTeller.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\STORYTELLER\Engine app\Debug\StoryTeller.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\STORYTELLER\Engine app\Debug\StoryTeller.lib" /MACHINE:X86 Debug\StoryTeller.res
+         Debug\audio.obj
+         Debug\dialogue.obj
+         Debug\game_control.obj
+         Debug\game_menu.obj
+         Debug\globals.obj
+         Debug\interactive.obj
+         Debug\Log.obj
+         Debug\main.obj
+         Debug\Markup.obj
+         Debug\scene.obj
+         Debug\setting.obj
+         Debug\states.obj
+         Debug\video.obj
+         LINK : D:\STORYTELLER\Engine app\Debug\StoryTeller.exe not found or not built by the last incremental link; performing full link
+         StoryTeller.vcxproj -> D:\STORYTELLER\Engine app\Debug\StoryTeller.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\STORYTELLER\Engine app\Debug\StoryTeller.exe;#1" /manifest Debug\StoryTeller.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\StoryTeller.unsuccessfulbuild".
+         Touching "Debug\StoryTeller.lastbuildstate".
+     1>Done Building Project "D:\STORYTELLER\Engine app\StoryTeller.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.07

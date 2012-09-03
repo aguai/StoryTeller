@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<SETTINGS>
+    <ENTRY name="audios_path">..\\Audio\\</ENTRY>
+    <ENTRY name="audios_suffix">.sta</ENTRY>
+    <ENTRY name="fullscreen">0</ENTRY>
+    <ENTRY name="game_saved">0</ENTRY>
+    <ENTRY name="log_file">log.txt</ENTRY>
+    <ENTRY name="music_volume">80</ENTRY>
+    <ENTRY name="new_game_states_file">new_game.stx</ENTRY>
+    <ENTRY name="pictures_path">..\\Pictures\\</ENTRY>
+    <ENTRY name="pictures_suffix">.stp</ENTRY>
+    <ENTRY name="resolution_x">1280</ENTRY>
+    <ENTRY name="resolution_y">720</ENTRY>
+    <ENTRY name="save_game_states_file">save_game.stx</ENTRY>
+    <ENTRY name="script_file">script.stx</ENTRY>
+    <ENTRY name="sound_volume">90</ENTRY>
+    <ENTRY name="videos_path">..\\Video\\</ENTRY>
+    <ENTRY name="videos_suffix">.stv</ENTRY>
+	<ENTRY name="bg_music">background</ENTRY>
+</SETTINGS>
